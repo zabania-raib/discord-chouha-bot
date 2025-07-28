@@ -1,30 +1,12 @@
-# netlify.toml
-
-# This file configures the Netlify deployment.
-# It specifies the directory for serverless functions and sets up
-# redirects to make the function URLs cleaner.
-
 [functions]
-  directory = "netlify/functions"
-  # Specifies that Netlify should automatically bundle Node.js functions and their dependencies.
-  node_bundler = "esbuild"
-
-# Redirects for cleaner function URLs
-[[redirects]]
-  # From the user-facing path
-  from = "/auth/discord"
-  # To the actual function endpoint
-  to = "/.netlify/functions/auth-discord"
-  # Status 200 means it's a rewrite, not a browser redirect.
-  # The URL in the browser bar remains /auth/discord.
-  status = 200
+directory = "netlify/functions"
 
 [[redirects]]
-  from = "/auth/callback"
-  to = "/.netlify/functions/auth-callback"
-  status = 200
+from = "/auth/discord"
+to = "/.netlify/functions/auth-discord"
+status = 200
 
 [[redirects]]
-  from = "/api/get-user"
-  to = "/.netlify/functions/get-user"
-  status = 200
+from = "/auth/callback"
+to = "/.netlify/functions/auth-callback"
+status = 200
